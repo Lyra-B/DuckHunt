@@ -37,7 +37,7 @@ Duck.prototype.flap = function() {
 
 // TODO: Display the Duck on the screen.
 Duck.prototype.draw = function() {
-  console.log("")
+ // console.log("")
   //var _this = this;
   // $(.right).show();
   // Make the duck appear somewhere random along the page and just off the screen
@@ -45,7 +45,7 @@ Duck.prototype.draw = function() {
   $(this.el).show();
   //$("#actors").show();
   $(".right").css('top', "200px")
-  $(".right").css("left", "105px")
+  $(".right").css("left", "-105px")
   //this.show();
    // $this.el.parent().show();
   // console.log('');
@@ -58,7 +58,9 @@ Duck.prototype.draw = function() {
   //_this.flap();
   //$("#actors").flap();
   // ... and Fly!
-  $(this.el).animate();
+  // $(this.el).animate({});
+  $(this.el).animate({left:+1380}, 7000);
+  //$(this.el).animate({left:+1380, height:randomHeight()}, 7000);
 
 }
 
@@ -86,3 +88,17 @@ Duck.prototype.remove = function() {
   $(this.el).remove();
   delete this;
 }
+
+
+// $( "#clickme" ).click(function() {
+//   $( "#book" ).animate({
+//     opacity: 0.25,
+//     left: "+=50",
+//     height: "toggle"
+//   }, 5000, function() {
+//     // Animation complete.
+//   });
+// });
+
+//Used information from the following urls:
+//http://api.jquery.com/animate/
