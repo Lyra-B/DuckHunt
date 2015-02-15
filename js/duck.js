@@ -35,12 +35,19 @@ Duck.prototype.flap = function() {
 
 // TODO: Display the Duck on the screen.
 Duck.prototype.draw = function() {
+  // var _this = this;
   // $(.right).show();
   // Make the duck appear somewhere random along the page and just off the screen
-  $("#actors").css("display","block");
+  // $("#actors").css("display","block");
+  $("#actors").show();
+  $(".right").css('top', "200px")
+  $(".right").css("left", "-105px")
+  // $(_this).parent().show();
+  // console.log('');
   // Append the element to the DOM, use the #game element
-  $("#actors").css("position", "absolute");
-  // $("#game").append("#actors");
+  // $("#actors").css("position", "absolute");
+  $("#game").append($("#actors"));
+  //$("#game").append(.(_this).parent)
   // Start Flapping...
 
   // ... and Fly!
