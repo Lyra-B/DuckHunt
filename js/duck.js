@@ -13,7 +13,7 @@ function Duck(game) {
 
   // Display the Duck in the #game
   this.draw();
-  //_this.flap();
+
   this.flap();
 }
 
@@ -33,39 +33,24 @@ Duck.prototype.flap = function() {
   this.flapTimer = setTimeout((function() {
     _this.flap();
   }), 300);
-}
+};
 
 // TODO: Display the Duck on the screen.
 Duck.prototype.draw = function() {
- // console.log("")
-  //var _this = this;
-  // $(.right).show();
   // Make the duck appear somewhere random along the page and just off the screen
-  // $("#actors").css("display","block");
   $(this.el).show();
-  //$("#actors").show();
-  $(".right").css('top', "200px")
-  $(".right").css("left", "-105px")
-  //this.show();
-   // $this.el.parent().show();
-  // console.log('');
+  $(".right").css('top', "200px");
+  $(".right").css("left", "-105px");
   // Append the element to the DOM, use the #game element
-  // $("#actors").css("position", "absolute");
-  //$("#game").append($("#actors"));
-  //$("#game").append(.(_this).parent)
-  // Start Flapping...
   $("#game").append($(this.el));
-  //_this.flap();
-  //$("#actors").flap();
-  // ... and Fly!
-  // $(this.el).animate({});
-  $(this.el).animate({left:+1380}, 7000);
-  //$(this.el).animate({left:+1380, height:randomHeight()}, 7000);
+  // Start Flapping...
 
-}
+  // ... and Fly!
+  $(this.el).animate({left:+1380}, 7000);
+};
 
 // TODO: I've been shot!
-Duck.prototype.die = function() {
+  Duck.prototype.die = function() {
   // Add a .dead CSS class
 
   // Stop flapping - clear the flapTimer
@@ -75,30 +60,19 @@ Duck.prototype.die = function() {
   // Notify the Game object and add 100 to the score
 
   // Fall to the bottom of the screen
-}
+};
 
 // I made it to the other side!
 Duck.prototype.complete = function() {
   this.game.lives -= 1;
   return this;
-}
+};
 
 // Code to remove the Duck from the DOM and from memory.
 Duck.prototype.remove = function() {
   $(this.el).remove();
   delete this;
-}
-
-
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).animate({
-//     opacity: 0.25,
-//     left: "+=50",
-//     height: "toggle"
-//   }, 5000, function() {
-//     // Animation complete.
-//   });
-// });
+};
 
 //Used information from the following urls:
 //http://api.jquery.com/animate/
