@@ -16,7 +16,6 @@ body {
 }
 
 #crosshair {
-  display: none;
   position: relative;
   z-index: 2;
   background: url(../img/crosshair.png);
