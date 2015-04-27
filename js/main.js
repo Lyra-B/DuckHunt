@@ -10,8 +10,14 @@ $(document).ready(function() {
   // Moves the crosshair with the mousepointer
   // TODO: Add a mousemove event to the #game element...
 
+  $( "#game" ).on('mousemove', function(e){
+    $( "#crosshair" ).css({
+      left:  e.pageX,
+      top:   e.pageY
+    });
+  });
+
   // Kick-off a New Game
   // TODO: Pass in a string to represent the difficulty level
-  //new Duck(this);
   new Game();
 });
