@@ -21,7 +21,7 @@ Game.prototype.difficulty = {
   easy: 8000,
   medium: 4000,
   hard: 2500
-}
+};
 
 // Fire off two new Ducks. After waiting a little while, continue to the next
 // round if we've got more lives, or show the Game Over screen.
@@ -43,16 +43,16 @@ Game.prototype.nextRound = function() {
     }
   }, this.speed + 2000);
 
-}
+};
 
 // Show the Game Over modal and insert the player's score.
 Game.prototype.gameOver = function() {
   $("#points").html(this.score);
   $("#game-over").toggle();
-}
+};
 
 // Add the given number of points to the score, and print the total to the log.
 Game.prototype.addScore = function(points) {
   this.score += points;
   console.log("Score: " + this.score);
-}
+};
