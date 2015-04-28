@@ -110,3 +110,14 @@ body {
   background-color: #72587F;
 }
 
+#shots {
+  position: absolute;
+  bottom: 18px;
+  left: 155px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-size: 2em;
+}
+
