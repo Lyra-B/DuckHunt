@@ -8,7 +8,7 @@ function Duck(game) {
   // Add a callback for when the Duck is clicked (shot!)
   var _this = this;
   $(this.el).click(function() {
-    _this.die();
+    if(_this.game.shots > 0) { _this.die(); }
   });
 
   // Display the Duck in the #game
@@ -76,5 +76,3 @@ Duck.prototype.remove = function() {
   delete this;
 };
 
-//Used information from the following urls:
-//http://api.jquery.com/animate/
