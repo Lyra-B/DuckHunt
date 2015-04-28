@@ -1,4 +1,12 @@
 $(document).ready(function() {
+  if(typeof(difficulty) === "undefined") {
+    $('#difficulty-dialog').show();
+    $('.button').click(function(){
+      $('#difficulty-dialog').hide();
+      var difficulty = this.id;
+    });
+  }
+
   console.log("Welcome to Duck Hunt!");
 
   // Behaviour for the play again link
