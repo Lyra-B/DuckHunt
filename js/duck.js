@@ -58,6 +58,7 @@ Duck.prototype.draw = function() {
   // Stop flying animations
     $(this.el).stop();
   // Notify the Game object and add 100 to the score
+    this.game.score += 100;
   // Fall to the bottom of the screen
     $(this.el).animate({bottom: '+500px'}, 6000);
 };
