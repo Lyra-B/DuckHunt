@@ -78,3 +78,24 @@ body {
   font-size: 0.4em;
 }
 
+#difficulty-dialog {
+  position:absolute;
+  top: 300px;
+  left: 500px;
+  margin: auto;
+  display:none;
+  padding-top: 30px;
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: #72587F;
+  width: 350px;
+  height:100px;
+  text-align:center;
+}
+
+#buttons {
+  margin-top: 20px;
+  clear: both;
+  background-color: #72587F;
+}
+
