@@ -3,17 +3,27 @@
 function Game(difficulty) {
   this.lives = 10;
   this.score = 0;
+  this.shots = 0;
+  this.modal = $('#difficulty-dialog');
 
   // Set the difficulty- easy by default
   if(typeof(difficulty) === "undefined") {
-    this.speed = this.difficulty.easy;
+    $('#difficulty-dialog').show();
+    var _this = this;
+
+    $('.button').click(function(){
+      $('#difficulty-dialog').hide();
+      difficulty = this.id;
+      _this.speed = _this.difficulty[difficulty];
+      _this.nextRound();
+    });
   }
   else {
     this.speed = this.difficulty[difficulty];
+    this.nextRound();
   }
 
   // Kick-off the first wave of Ducks
-  this.nextRound();
 }
 
 // Maps difficulty to speed at which a Duck traverses the screen in milliseconds.
@@ -29,6 +39,12 @@ Game.prototype.nextRound = function() {
   var duck = new Duck(this);
   var duck = new Duck(this);
   var _this = this;
+  this.shots = 3;
+  $('#shots').html(this.shots);
+  $("#game").click(function(){
+    if(_this.shots > 0) { _this.shots -= 1; }
+    $('#shots').html(_this.shots);
+  });
 
   // Do this again in a little while...
   var roundTimer = setTimeout(function() {
