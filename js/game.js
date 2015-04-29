@@ -58,7 +58,6 @@ Game.prototype.nextRound = function() {
       _this.nextRound();
     }
   }, this.speed + 2000);
-
 };
 
 // Show the Game Over modal and insert the player's score.
